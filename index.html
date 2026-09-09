@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Share anonymous product feedback in about three minutes." />
+    <title>Fieldnote — Anonymous feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Fieldnote home">Fieldnote</a>
+    </header>
+
+    <main id="top">
+      <section class="intro" aria-labelledby="page-title">
+        <h1 id="page-title">Help shape what comes next</h1>
+        <p>Your honest feedback helps us make the experience more useful. This survey takes about 3 minutes.</p>
+        <p class="privacy-summary">No name, email, or account required.</p>
+        <span class="accent-line" aria-hidden="true"></span>
+      </section>
+
+      <section class="survey-shell" aria-label="Anonymous feedback survey">
+        <form id="feedback-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+          <div class="form-heading">
+            <h2>Your feedback</h2>
+            <span>About 3 minutes</span>
+          </div>
+
+          <fieldset class="question rating-question">
+            <legend>Overall, how was your experience? <span aria-hidden="true">*</span></legend>
+            <div class="rating-grid">
+              <label><input type="radio" name="overall_experience" value="1 - Very poor" required /><span>1</span></label>
+              <label><input type="radio" name="overall_experience" value="2" /><span>2</span></label>
+              <label><input type="radio" name="overall_experience" value="3" /><span>3</span></label>
+              <label><input type="radio" name="overall_experience" value="4" /><span>4</span></label>
+              <label><input type="radio" name="overall_experience" value="5 - Excellent" /><span>5</span></label>
+            </div>
+            <div class="rating-scale" aria-hidden="true"><span>Very poor</span><span>Excellent</span></div>
+          </fieldset>
+
+          <div class="question">
+            <label for="playthrough">How did you enjoy the playthrough? <span>(optional)</span></label>
+            <textarea id="playthrough" name="playthrough_experience" rows="4" maxlength="2000" placeholder="Tell us about your experience…"></textarea>
+          </div>
+
+          <div class="question">
+            <label for="stood-out">What stood out to you most? <span>(optional)</span></label>
+            <textarea id="stood-out" name="stood_out" rows="4" maxlength="2000" placeholder="Share a moment, feature, or detail you remember…"></textarea>
+          </div>
+
+          <div class="question">
+            <label for="improvements">What can be improved upon? <span>(optional)</span></label>
+            <textarea id="improvements" name="improvements" rows="4" maxlength="2000" placeholder="Tell us what you would change or improve…"></textarea>
+          </div>
+
+          <fieldset class="question use-again-question">
+            <legend>Would you use this again? <span aria-hidden="true">*</span></legend>
+            <div class="choice-grid">
+              <label><input type="radio" name="use_again" value="Definitely" required /><span>Definitely</span></label>
+              <label><input type="radio" name="use_again" value="Probably" /><span>Probably</span></label>
+              <label><input type="radio" name="use_again" value="Not sure" /><span>Not sure</span></label>
+              <label><input type="radio" name="use_again" value="Probably not" /><span>Probably not</span></label>
+              <label><input type="radio" name="use_again" value="Definitely not" /><span>Definitely not</span></label>
+            </div>
+          </fieldset>
+
+          <fieldset class="question recommendation-question">
+            <legend>How likely are you to recommend this to a friend? <span aria-hidden="true">*</span></legend>
+            <div class="recommendation-grid">
+              <label><input type="radio" name="recommendation" value="1 - Not at all likely" required /><span>1</span></label>
+              <label><input type="radio" name="recommendation" value="2" /><span>2</span></label>
+              <label><input type="radio" name="recommendation" value="3" /><span>3</span></label>
+              <label><input type="radio" name="recommendation" value="4" /><span>4</span></label>
+              <label><input type="radio" name="recommendation" value="5 - Extremely likely" /><span>5</span></label>
+            </div>
+            <div class="rating-scale" aria-hidden="true"><span>Not at all likely</span><span>Extremely likely</span></div>
+          </fieldset>
+
+          <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          <input type="hidden" name="survey_version" value="trial-1" />
+          <input type="hidden" name="_subject" value="New anonymous product feedback" />
+
+          <div id="form-error" class="form-error" role="alert" hidden></div>
+
+          <div class="privacy-note">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3m-11 0h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Zm5 5v3" /></svg>
+            <div><strong>We don’t ask who you are.</strong><p>Please avoid including names, email addresses, or other identifying details in your answers.</p></div>
+          </div>
+
+          <button class="submit-button" type="submit">Send anonymous feedback</button>
+          <p class="required-note"><span aria-hidden="true">*</span> Required question</p>
+        </form>
+
+        <div id="success-state" class="success-state" tabindex="-1" hidden>
+          <div class="success-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></svg>
+          </div>
+          <h2>Thank you — your feedback was sent.</h2>
+          <p>Your input helps us make the product more useful for everyone.</p>
+          <button id="submit-another" class="secondary-button" type="button">Submit another response</button>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>Thank you for helping us improve.</p>
+      <button id="privacy-details" class="text-button" type="button" aria-expanded="false" aria-controls="privacy-copy">Privacy details</button>
+      <p id="privacy-copy" class="privacy-copy" hidden>This survey does not request your identity. GitHub Pages and the form-delivery provider may process routine technical data needed to serve the page and prevent abuse.</p>
+    </footer>
+  </body>
+</html>
