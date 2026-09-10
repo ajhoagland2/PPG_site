@@ -15,7 +15,7 @@ The endpoint is meant to be public; do not put secret keys or passwords in this 
 
 ## Customize
 
-Edit the word “Fieldnote,” the page title, prompts, answer options, and `survey_version` directly in `index.html`. The survey includes an overall 1–5 experience rating, three optional written playthrough questions, a reuse question, and a 1–5 recommendation score. Keep written questions optional unless the answer is essential. Avoid asking for names, email addresses, employer names, exact locations, or other details that could identify someone.
+Edit the Pen Pad Golf page title, prompts, answer options, and `survey_version` directly in `index.html`. The survey includes an overall 1–5 experience rating, three optional written playthrough questions, a replay question, and a 1–5 recommendation score. Keep written questions optional unless the answer is essential. Avoid asking for names, email addresses, employer names, exact locations, or other details that could identify someone.
 
 ## Publish with GitHub Pages
 

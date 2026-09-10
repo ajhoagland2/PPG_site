@@ -1,6 +1,7 @@
 const form = document.querySelector("#feedback-form");
 const successState = document.querySelector("#success-state");
 const submitButton = form.querySelector("button[type='submit']");
+const submitButtonLabel = submitButton.querySelector("span");
 const errorBox = document.querySelector("#form-error");
 const submitAnotherButton = document.querySelector("#submit-another");
 const privacyButton = document.querySelector("#privacy-details");
@@ -24,7 +25,7 @@ form.addEventListener("submit", async (event) => {
   }
 
   submitButton.disabled = true;
-  submitButton.textContent = "Sending…";
+  submitButtonLabel.textContent = "Sending…";
 
   try {
     const response = await fetch(form.action, {
@@ -43,7 +44,7 @@ form.addEventListener("submit", async (event) => {
     showError("We couldn’t send your feedback. Please check your connection and try again.");
   } finally {
     submitButton.disabled = false;
-    submitButton.textContent = "Send anonymous feedback";
+    submitButtonLabel.textContent = "Send feedback";
   }
 });
 
