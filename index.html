@@ -1,125 +1,38 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Share anonymous feedback about your Pen Pad Golf experience in about three minutes." />
-    <title>Pen Pad Golf — Player feedback</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
-  </head>
-  <body>
-    <header class="site-header">
-      <a class="wordmark" href="#top" aria-label="Pen Pad Golf feedback home">
-        <span class="brand-mark" aria-hidden="true">
-          <svg viewBox="0 0 24 24"><path d="M7 21V4m0 1h10l-2.4 3L17 11H7M4 21h6" /></svg>
-        </span>
-        <span>Pen Pad Golf</span>
-      </a>
-    </header>
-
-    <main id="top">
-      <section class="intro" aria-labelledby="page-title">
-        <h1 id="page-title">Help shape Pen Pad Golf</h1>
-        <p>Your honest feedback helps us make every round more fun, clear, and easy to play. This survey takes about 3 minutes.</p>
-        <p class="brand-line">Stand it. Flick it. Mark it.</p>
-        <p class="privacy-summary">No name, email, or account required.</p>
-        <span class="accent-line" aria-hidden="true"></span>
-      </section>
-
-      <section class="survey-shell" aria-label="Anonymous feedback survey">
-        <form id="feedback-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-          <div class="form-heading">
-            <h2>Tell us about your round</h2>
-            <span>About 3 minutes</span>
-          </div>
-
-          <fieldset class="question rating-question">
-            <legend>Overall, how was your Pen Pad Golf experience? <span aria-hidden="true">*</span></legend>
-            <div class="rating-grid">
-              <label><input type="radio" name="overall_experience" value="1 - Very poor" required /><span>1</span></label>
-              <label><input type="radio" name="overall_experience" value="2" /><span>2</span></label>
-              <label><input type="radio" name="overall_experience" value="3" /><span>3</span></label>
-              <label><input type="radio" name="overall_experience" value="4" /><span>4</span></label>
-              <label><input type="radio" name="overall_experience" value="5 - Excellent" /><span>5</span></label>
-            </div>
-            <div class="rating-scale" aria-hidden="true"><span>Very poor</span><span>Excellent</span></div>
-          </fieldset>
-
-          <div class="question">
-            <label for="playthrough">What did you enjoy about your round? <span>(optional)</span></label>
-            <textarea id="playthrough" name="playthrough_experience" rows="4" maxlength="2000" placeholder="Tell us what made the round enjoyable…"></textarea>
-          </div>
-
-          <div class="question">
-            <label for="stood-out">What stood out most? <span>(optional)</span></label>
-            <textarea id="stood-out" name="stood_out" rows="4" maxlength="2000" placeholder="Share a moment, feature, or detail you remember…"></textarea>
-          </div>
-
-          <div class="question">
-            <label for="improvements">What could improve the experience? <span>(optional)</span></label>
-            <textarea id="improvements" name="improvements" rows="4" maxlength="2000" placeholder="Tell us what you would change for the next round…"></textarea>
-          </div>
-
-          <fieldset class="question use-again-question">
-            <legend>Would you play Pen Pad Golf again? <span aria-hidden="true">*</span></legend>
-            <div class="choice-grid">
-              <label><input type="radio" name="use_again" value="Definitely" required /><span>Definitely</span></label>
-              <label><input type="radio" name="use_again" value="Probably" /><span>Probably</span></label>
-              <label><input type="radio" name="use_again" value="Not sure" /><span>Not sure</span></label>
-              <label><input type="radio" name="use_again" value="Probably not" /><span>Probably not</span></label>
-              <label><input type="radio" name="use_again" value="Definitely not" /><span>Definitely not</span></label>
-            </div>
-          </fieldset>
-
-          <fieldset class="question recommendation-question">
-            <legend>How likely are you to recommend Pen Pad Golf to a friend? <span aria-hidden="true">*</span></legend>
-            <div class="recommendation-grid">
-              <label><input type="radio" name="recommendation" value="1 - Not at all likely" required /><span>1</span></label>
-              <label><input type="radio" name="recommendation" value="2" /><span>2</span></label>
-              <label><input type="radio" name="recommendation" value="3" /><span>3</span></label>
-              <label><input type="radio" name="recommendation" value="4" /><span>4</span></label>
-              <label><input type="radio" name="recommendation" value="5 - Extremely likely" /><span>5</span></label>
-            </div>
-            <div class="rating-scale" aria-hidden="true"><span>Not at all likely</span><span>Extremely likely</span></div>
-          </fieldset>
-
-          <input type="text" name="_gotcha" class="honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
-          <input type="hidden" name="survey_version" value="trial-1" />
-          <input type="hidden" name="_subject" value="New Pen Pad Golf player feedback" />
-
-          <div id="form-error" class="form-error" role="alert" hidden></div>
-
-          <div class="privacy-note">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 10V7a5 5 0 0 1 10 0v3m-11 0h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-8a2 2 0 0 1 2-2Zm5 5v3" /></svg>
-            <div><strong>We don’t ask who you are.</strong><p>Please avoid including names, email addresses, or other identifying details in your answers.</p></div>
-          </div>
-
-          <button class="submit-button" type="submit">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 21V4m0 1h10l-2.4 3L17 11H7" /></svg>
-            <span>Send feedback</span>
-          </button>
-          <p class="required-note"><span aria-hidden="true">*</span> Required question</p>
-        </form>
-
-        <div id="success-state" class="success-state" tabindex="-1" hidden>
-          <div class="success-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="m5 12 4 4L19 6" /></svg>
-          </div>
-          <h2>Thanks for playing — your feedback was sent.</h2>
-          <p>Your input helps us make Pen Pad Golf better for every player.</p>
-          <button id="submit-another" class="secondary-button" type="button">Submit another response</button>
-        </div>
-      </section>
-    </main>
-
-    <footer>
-      <p>Thanks for helping us improve Pen Pad Golf.</p>
-      <button id="privacy-details" class="text-button" type="button" aria-expanded="false" aria-controls="privacy-copy">Privacy details</button>
-      <p id="privacy-copy" class="privacy-copy" hidden>This survey does not request your identity. GitHub Pages and the form-delivery provider may process routine technical data needed to serve the page and prevent abuse.</p>
-    </footer>
-  </body>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pen Pad Golf is a tabletop golf game played with a pen and a printed course. Learn how to play and share your feedback." />
+  <title>Pen Pad Golf — A little golf. A lot of fun.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <header class="site-header"><div class="header-inner">
+    <a class="wordmark" href="index.html" aria-label="Pen Pad Golf home"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 21V4m0 1h10l-2.4 3L17 11H7M4 21h6" /></svg></span><span>Pen Pad Golf</span></a>
+    <nav class="site-nav" aria-label="Main navigation"><a class="active" aria-current="page" href="index.html">Home</a><a href="#how-to-play">How to Play</a><a href="survey.html">Feedback Survey</a></nav>
+  </div></header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title"><div class="hero-inner">
+      <div class="hero-copy"><h1 id="hero-title">A little golf.<br />A lot of fun.</h1><p>Stand your pen, flick toward the flag, and mark every stroke on the page.</p><div class="hero-actions"><a class="primary-link" href="#how-to-play">See how to play <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a><a class="text-link" href="survey.html">Share feedback</a></div></div>
+      <div class="hero-art"><img src="assets/pen-pad-golf-cover-hero.png" alt="Watercolor illustration of a hand flicking a pen along a golf course on a paper pad" fetchpriority="high" /></div>
+    </div></section>
+    <section class="how-to" id="how-to-play" aria-labelledby="how-title"><div class="section-inner">
+      <h2 id="how-title">How to Play Pen Pad Golf</h2><p class="section-lead">Stand it. Flick it. Mark it. Lowest score wins.</p>
+      <div class="how-grid"><div class="demo-frame"><video controls preload="metadata" playsinline poster="assets/pen-pad-golf-demo-poster.jpg" aria-label="Pen Pad Golf demonstration video"><source src="assets/pen-pad-golf-demo.mp4" type="video/mp4" />Your browser does not support the Pen Pad Golf demo video.</video></div>
+      <ol class="play-steps">
+        <li><span class="step-number">1</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-6.1 7-12a7 7 0 0 0-14 0c0 5.9 7 12 7 12Z"/><circle cx="12" cy="9" r="2.2"/></svg></span><span>Start in the tee box.</span></li>
+        <li><span class="step-number">2</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="1"/></svg></span><span>Stand your pen upright.</span></li>
+        <li><span class="step-number">3</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m4 3 6.2 17 2.2-7.3L20 10 4 3Z"/></svg></span><span>Flick the pen toward the hole.</span></li>
+        <li><span class="step-number">4</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM15 3v5h4M9 12h7M9 16h7"/></svg></span><span>Mark where the pen lands — that’s 1 stroke.</span></li>
+        <li><span class="step-number">5</span><span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 21V4m0 1c4-2 7 2 12 0v10c-5 2-8-2-12 0"/></svg></span><span>Keep flicking from the new mark until you reach the hole.</span></li>
+      </ol></div>
+    </div></section>
+    <section class="feedback-cta" aria-labelledby="feedback-title"><div class="section-inner"><h2 id="feedback-title">Played a round? Tell us what you think.</h2><a class="primary-link" href="survey.html">Take the feedback survey <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h16m-6-6 6 6-6 6" /></svg></a></div></section>
+  </main>
+  <footer class="site-footer"><span>Pen Pad Golf</span><span>Stand it. Flick it. Mark it.</span><a href="survey.html">Feedback Survey</a></footer>
+</body>
 </html>

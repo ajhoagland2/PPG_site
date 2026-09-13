@@ -1,6 +1,6 @@
-# Anonymous product feedback survey
+# Pen Pad Golf website
 
-A dependency-free survey designed for GitHub Pages. It does not ask respondents for a name, email address, login, or account.
+A dependency-free landing page and anonymous feedback survey designed for GitHub Pages. `index.html` is the landing page; `survey.html` contains the survey. The survey does not ask respondents for a name, email address, login, or account.
 
 ## Connect email delivery
 
@@ -8,21 +8,21 @@ GitHub Pages cannot email or store form responses on its own. This page is prepa
 
 1. Create a Formspree account and a new form using the email address where you want feedback delivered.
 2. Copy the form ID from the endpoint Formspree gives you.
-3. In `index.html`, replace `YOUR_FORM_ID` with that ID.
+3. In `survey.html`, replace `YOUR_FORM_ID` with that ID.
 4. Submit one test response and confirm the form if Formspree asks you to verify it.
 
 The endpoint is meant to be public; do not put secret keys or passwords in this repository.
 
 ## Customize
 
-Edit the Pen Pad Golf page title, prompts, answer options, and `survey_version` directly in `index.html`. The survey includes an overall 1–5 experience rating, three optional written playthrough questions, a replay question, and a 1–5 recommendation score. Keep written questions optional unless the answer is essential. Avoid asking for names, email addresses, employer names, exact locations, or other details that could identify someone.
+Edit the survey title, prompts, answer options, and `survey_version` directly in `survey.html`. The survey includes an overall 1–5 experience rating, three optional written playthrough questions, a replay question, and a 1–5 recommendation score. Keep written questions optional unless the answer is essential. Avoid asking for names, email addresses, employer names, exact locations, or other details that could identify someone.
 
 ## Publish with GitHub Pages
 
 1. Create a GitHub repository and add these files at its top level.
 2. In the repository, open **Settings → Pages**.
 3. Under **Build and deployment**, choose **Deploy from a branch**.
-4. Select your default branch and the `/ (root)` folder, then save.
+4. To publish this version, select the `V2` branch and the `/ (root)` folder, then save. GitHub Pages serves one branch at a time.
 5. GitHub will show the public URL after deployment finishes.
 
 ## Privacy note
